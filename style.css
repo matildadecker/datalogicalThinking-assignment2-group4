@@ -1,0 +1,117 @@
+/* Rensa webbläsarens standardstilar */
+* { /* Påverka alla element på sidan */ 
+    margin: 0; /* Ta kontroll över alla marginaler */
+    padding: 0; /* Ta kontroll över alla inre mellanrum */
+    box-sizing: border-box; /* Både padding och border ska räknas in i totalbredden på varje element */
+}
+
+/* Grundinställningar */
+html, body { /* För att allt ska bete sig konsekvent */
+    height: 100%; /* Innehåll ska täcka hela webbläsarens höjd */ 
+    margin: 0; /* Extra reset för äldre webbläsare som har target html eller body för marginaler */ 
+    padding: 0; /* Extra reset för äldre webbläsare som har target html eller body för marginaler */ 
+    background-color: #ffffff; /* Bakgrundsfärg: Vit */
+    color: #000; /* Textfärg: Svart */
+    line-height: 1.8; /* Radavstånd */
+    font-family: 'Lora', serif; /* Grundtypsnitt */
+}
+
+/* Innehållscontainer */
+main {
+    max-width: 800px; /* Begränsar bredden för bättre läsbarhet */
+    margin: 0 auto; /* Horisontell centrering */
+    padding: 2rem 1.5 rem; /* Avstånd runt texten */
+    padding-top: 6rem; /* Avstånd ovanför texten */
+}
+
+/* Rubriker */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif; /* Grundtypsnitt för rubriker */
+    font-weight: 500; /* Textens tjocklek */
+    text-transform: uppercase; /* Versaler */
+    margin-top: 2rem; /*Avståndet ovanför rubriken */
+    margin-bottom: 1rem; /*Avståndet under rubriken */
+}
+
+h1 {
+    font-size: 2.5rem; /* Textstorlek h1 */
+    font-weight: 500; /* Textens tjocklek */
+    letter-spacing: 1px; /* Avstånd mellan bokstäver */
+}
+
+/* Paragrafer */
+p {
+    margin-bottom: 1.8rem; /*Avstånd under paragrafer */
+}
+
+/* Navigationsmeny */
+nav {
+    position: fixed; /* Fixerar menyn högst upp på sidan */
+    top: 0; /* Placerar menyn högst upp */
+    left: 0; /* Menyn löper från vänster till höger */
+    width: 100%; /* Menyn ska täcka hela sidans bredd */
+    background: #eef7ee; /* Diskret ljusblå bakgrundsfärg */
+    color: #000; /* Textfärg: Svart */
+    display: flex; /* Placerar innehållet i menyn på rad */
+    justify-content: space-between; /* Fördelar elementen jämnt över raden */
+    align-items: center; /* Vertikal centrering */
+    padding: 1rem 3rem; /* Inre marginal */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Skugga under menyn* */
+    z-index: 1000; /* Placerar menyn överst, över alla andra element */
+}
+
+/* Logotyp */
+.logo {
+    font-weight: 700; /* Festil i rubriken */
+    font-size: 1.3rem; /* Textstorlek */
+    letter-spacing: 1px; /* Avstånd mellan bokstäver */
+    text-transform: uppercase; /* Versaler */
+    font-family: 'Lato', sans-serif; /* Logotypen ska ha typsnitt Lato */ 
+}
+
+/* Menylänkar */
+.menu a {
+    text-decoration: none; /* Tar bort understrykning av text */
+    color: #000; /* Textfärg: Svart */
+    text-transform: uppercase; /* Versaler */
+    margin: 0 0.8rem; /* Horisontellt avstånd mellan länkar */
+    font-size: 0.85rem; /* Textstorlek */
+    transition: all 0.3s ease; /* Mjuk hovereffekt */
+    font-family: 'Lato', sans-serif; /* Länkarna ska ha typsnitt Lato */ 
+    font-weight: 400; /* Normal tjocklek på texten */
+}
+
+/* Hovereffekt för menylänkar */
+.menu a:hover {
+    color: white; /* Hoverfärg: Vit */
+    transform: translateY(-2px); /* Hovereffekt */
+}
+
+/* Sociala ikoner */
+.socials a {
+    color: #000; /* Färg: Svart */
+    margin-left: 1rem; /* Avstånd mellan ikoner */
+    font-size: 1.1rem; /*Storlek på ikoner */
+    transition: all 0.3s ease; /* Mjuk hovereffekt */
+}
+
+/* Hovereffekt för ikoner */
+.socials a:hover {
+    color: white; /* Hoverfärg: Vit */
+    transform: scale(1.2); /* Hovereffekt */
+}
+
+/* Footer */ 
+footer {
+    background-color: #eef7ee; /* Diskret ljusblå bakgrundsfärg */
+    color: #000; /* Textfärg: Svart */
+    text-align: center; /* Allt innehåll ska centreras horisontellt */
+    padding: 1.5rem 0; /* Inre marginaler */
+    font-family: 'Lato', sans-serif; /* Typsnitt */ 
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.1); /*Skugga ovanför footer */
+}
+
+footer p {
+    margin-bottom: 0.5rem; /* Frångå standardinställningarna för marginaler */
+    line-height: 1.4; /* Frångå standardinställningarna för avstånd mellan paragrafer */ 
+}
