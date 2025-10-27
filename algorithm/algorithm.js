@@ -1,7 +1,7 @@
 "use strict";
 
 const fs = require("fs");
-const text = fs.readFileSync("movies_fixed.json", "utf8");
+const text = fs.readFileSync("movies_100_clean.json", "utf8");
 const MOVIES = JSON.parse(text);
 
 function low(input) {
