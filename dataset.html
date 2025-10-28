@@ -1,24 +1,17 @@
 <!DOCTYPE HTML>
 <html lang="eng">
     
-    <!-- Head -->
     <head>
         <meta charset="UTF-8">
         <title>MovieMood - The dataset</title>
-        <!-- Connecting CSS file -->
         <link rel="stylesheet" href="style.css">
-        <!-- Font Awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     </head>
 
-    <!-- Body -->
     <body>
-        <!-- Main Menu -->
         <nav>
-            <!-- Main Menu: Logotype -->
             <div class="logo">Movie Mood</div>
             
-            <!-- Main Menu: Menu Items --->
             <div class="menu">
                 <a href="index.html">Movie Mood Project</a>
                 <a href="dataset.html">The Dataset</a>
@@ -26,7 +19,6 @@
                 <a href="people.html">The Team</a>
             </div>
 
-            <!-- Main Menu: Socials -->
             <div class="socials">
                 <a href="#"><i class="fab fa-facebook"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
@@ -35,10 +27,7 @@
             </div>
         </nav>
        
-        <!-- Main Content Area -->
         <main>
-
-            <!-- The dataset -->
             <h1>The dataset</h1>
             <p>We started by downloading the <b><a href="https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata" class="pastel-link">TMDB 5000 Movie Dataset</a></b> from <a href="https://www.kaggle.com/"><b>Kaggle</b></a>, which contains information about approximately 5000 movies. The dataset was downloaded as a <b>CSV file.</b> Since we didn’t need all 5000 movies, we decided to reduce the dataset to only 100 movies using the bash terminal. We used the following command:</p>
             <p class="code-section">head -n 101 tmdb_5000_credits.csv > tmdb_100.csv</p>
@@ -47,7 +36,6 @@
             <p>After cleaning the data, we wanted to have it available in different formats. We uploaded the CSV-file to <b><a href="https://workspace.google.com/products/sheets/">Google Sheets</a></b>, then installed the <b><a href="https://workspace.google.com/marketplace/app/export_sheet_data/903838927001">Export Sheet Data</a></b> add-on. With this tool, we exported the same dataset as both <b>XML</b> and <b>JSON</b> files. This made it easier to use the data in different parts of our web project and to test how various data formats could be implemented.</p>
         </main>
         
-        <!-- Footer -->
         <footer>
             <p>&copy; 2025 Movie Mood. All rights reserved.</p>
             <p>Follow us for more updates!</p>
