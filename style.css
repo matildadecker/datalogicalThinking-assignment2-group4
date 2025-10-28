@@ -1,162 +1,145 @@
-/* Reset browser default styles */
-* { /* Affect all elements on the page */ 
-    margin: 0; /* Remove all default margins */
-    padding: 0; /* Remove all default margins */
-    box-sizing: border-box; /* Include padding and border in the total element width/height */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Base settings */
-html, body { /* Keep layout consistens across browsers */
-    height: 100%; /* Ensure the content convers the full viewport height */ 
-    margin: 0; /* Extra reset for older browsers targeting htmk/body margins */ 
-    padding: 0; /* Extra reset for older browsers targeting htmk/body margins */ 
-    background-color: #ffffff; /* Background color: white */
-    color: #000; /* Text color: black */
-    line-height: 1.8; /* Line spacing */
-    font-family: 'Lora', serif; /* Base font */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #000;
+    line-height: 1.8;
+    font-family: 'Lora', serif;
 }
 
-/* Main content container */
 main {
-    max-width: 800px; /* Limit width for better readability */
-    margin: 0 auto; /* Center horizontally */
-    padding: 2rem 1.5 rem; /* Inner spacing around text */
-    padding-top: 6rem; /* Extra space above content */
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1.5 rem; 
+    padding-top: 6rem; 
 }
 
-/* Headings */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', sans-serif; /* Font for headings */
-    font-weight: 500; /* Font weight */
-    text-transform: uppercase; /* Uppercase text */
-    margin-top: 2rem; /* Space above heading */
-    margin-bottom: 1rem; /* Space below heading */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
 }
 
 h1 { 
-    font-size: 2.5rem; /* Heading size */
-    font-weight: 500; /* Font weight */
-    letter-spacing: 1px; /* Space between letters */
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: 1px;
 }
 
-/* Paragraphs */
 p {
-    margin-bottom: 1.8rem; /* Space below each paragraph*/
+    margin-bottom: 1.8rem; 
 }
 
-/* Links inside paragraphs */
 p a { 
-    color: #7FC8A9; /* Color: green */
-    text-decoration: none; /* Remove underline */
-    transition: color 0.3s ease; /* Smooth color transition */
+    color: #7FC8A9;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-/* Hover effect for links inside paragraphs */
 p a:hover {
-    color: #000000; /* Black on hover */
+    color: #000000;
 }
 
-/* Text styling for code snippets and commands */
 .code-section {
-    font-family: 'Courier New', monospace; /* Classic code look */
-    font-size: 0.95rem; /* Slightly smaller text */
-    background-color: #f4f4f4; /* Light gray background */
-    display: inline-block; /* Makes background wrap text width */
-    padding: 0.3rem 0.6rem; /* Spacing around text */
-    border-radius: 4px; /* Soft corners */
-    line-height: 1.1; /* Tight spacing between lines */
-    white-space: pre; /* Keeps line breaks and spacing exactly as in HTML */
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+    background-color: #f4f4f4;
+    display: inline-block;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px; 
+    line-height: 1.1; 
+    white-space: pre;
 }
 
-code { /* For in-text code snippets, commands, etc */
-    background-color: #f4f4f4; /* Light gray background */
-    color: #c7254e; /* Text color: pink */
-    font-family: monospace; /* Classic code look */
-    padding: 2px 5px; /* Spacing around text */
-    border-radius: 4px; /* Soft corners */
+code {
+    background-color: #f4f4f4; 
+    color: #c7254e;
+    font-family: monospace;
+    padding: 2px 5px; 
+    border-radius: 4px; 
 }
 
-/* Images */
 .image-container {
-  text-align: center; /* Center image horizontally */
-  margin: 20px 0; /* Add some space above and below */
+  text-align: center; 
+  margin: 20px 0;
 }
 
 .image-container img {
-  max-width: 100%; /* Fit image within content area */
-  height: auto; /* Keep the proportions correct */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Soft shadow */
+  max-width: 100%; 
+  height: auto; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* Navigation bar */
 nav {
-    position: fixed; /* Keep nav fixed at the top */
-    top: 0; /* Stick to the top edge */
-    left: 0; /* Span full width from left to right */
-    width: 100%; /* Full page width */
-    background: #eef7ee; /* Soft light blue background */
-    color: #000; /* Text color: black */
-    display: flex; /* Place items in a row */
-    justify-content: space-between; /* Distribute elements evenly */
-    align-items: center; /* Vertically center items */
-    padding: 1rem 3rem; /* Inner padding */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Drop shadow below nav * */
-    z-index: 1000; /* Keep nav above all other elements */
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    background: #eef7ee; 
+    color: #000; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 1rem 3rem; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+    z-index: 1000; 
 }
 
-/* Logo */
 .logo {
-    font-weight: 700; /* Bold text */
-    font-size: 1.3rem; /* Font size */
-    letter-spacing: 1px; /* Space between letters */
-    text-transform: uppercase; /* Uppercase text */
-    font-family: 'Lato', sans-serif; /* Font for logo */ 
+    font-weight: 700;
+    font-size: 1.3rem; 
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: 'Lato', sans-serif;
 }
 
-/* Navigation links */
 .menu a {
-    text-decoration: none; /* Remove underline */
-    color: #000; /* Text color: black */
-    text-transform: uppercase; /* Uppercase text */
-    margin: 0 0.8rem; /* Horizontal spacing between links */
-    font-size: 0.85rem; /* Font size */
-    transition: all 0.3s ease; /* Smooth hover effect */
-    font-family: 'Lato', sans-serif; /* Font for menu links */ 
-    font-weight: 400; /* Normal font weight */
+    text-decoration: none; 
+    color: #000;
+    text-transform: uppercase; 
+    margin: 0 0.8rem; 
+    font-size: 0.85rem; 
+    transition: all 0.3s ease; 
+    font-family: 'Lato', sans-serif; 
+    font-weight: 400; 
 }
 
-/* Hover effect for navigation links */
 .menu a:hover {
-    color: white; /* White text on hover */
-    transform: translateY(-2px); /* Slight upward movement */
+    color: white; 
+    transform: translateY(-2px);
 }
 
-/* Social icons */
 .socials a {
-    color: #000; /* Icon color: black */
-    margin-left: 1rem; /* Space between icons */
-    font-size: 1.1rem; /* Icon size */
-    transition: all 0.3s ease; /* Smooth hover transition */
+    color: #000; 
+    margin-left: 1rem;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
 }
 
-/* Hover effect for icons */
 .socials a:hover {
-    color: white; /* White on hover */
-    transform: scale(1.2); /* Slight zoom effect */
+    color: white; 
+    transform: scale(1.2); 
 }
 
-/* Footer */ 
 footer {
-    background-color: #eef7ee; /* Soft light-blue background */
-    color: #000; /* Text color: black */
-    text-align: center; /* Center all footer content */
-    padding: 1.5rem 0; /* Inner padding */
-    font-family: 'Lato', sans-serif; /* Font */ 
-    box-shadow: 0 -4px 12px rgba(0,0,0,0.1); /* Shadow above footer */
+    background-color: #eef7ee;
+    color: #000;
+    text-align: center;
+    padding: 1.5rem 0;
+    font-family: 'Lato', sans-serif;
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.1);
 }
 
-/* Adjustments for paragraphs inside footer */
 footer p {
-    margin-bottom: 0.5rem; /* Custom spacing for paragraphs */
-    line-height: 1.4; /* Adjust line spacing */ 
+    margin-bottom: 0.5rem; 
+    line-height: 1.4; 
 }
