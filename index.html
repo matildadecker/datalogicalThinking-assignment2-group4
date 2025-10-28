@@ -4,8 +4,8 @@
     <!-- Head -->
     <head>
         <meta charset="UTF-8">
-        <title>MovieMood - The algorithm</title>
-        <!-- Connecting the CSS file -->
+        <title>MovieMood</title>
+        <!-- Connecting CSS-file -->
         <link rel="stylesheet" href="style.css">
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -15,7 +15,7 @@
     <body>
         <!-- Main Menu -->
         <nav>
-            <!-- Main Menu: Logotype -->
+            <!-- Main Menu: Logotype --> 
             <div class="logo">Movie Mood</div>
             
             <!-- Main Menu: Menu Items --->
@@ -39,96 +39,23 @@
         <main>
 
             <!-- Header -->
-            <h1>The algorithm</h1>
-            
-            <!-- Dataset structure -->
-            <h2>Dataset structure</h2>  
-            <p>The dataset in the <b>JSON</b> file has the following structure, where each movie object contains:</p>
-            
-            <!-- Code section -->
-            <div class="code-section">
-<b>movie_id:</b> integer  
-<b>title:</b> string  
-<b>cast:</b> (a list of people/characters):
-<b>cast_id:</b> integer
-<b>character:</b> string
-<b>credit_id:</b> string 
-<b>gender:</b> integer
-<b>id:</b> integer
-<b>name:</b> string
-<b>order:</b> integer
+            <h1>Welcome to Movie Mood</h1>
+
+            <!-- Image -->
+            <div class="image-container">
+                <img src="images/popcorn.jpg" alt="Photo of a popcorn stand">
             </div>
             
-            <!-- Explanation of the pseudocode -->
-            <h2>Explanation of the <b>pseudocode</b></h2>
-            
-            <!-- Low Function-->
-            <h3>1. The <b>low</b> function</h3>
-            <p>
-                The first function, <code>low</code>, takes an input as a parameter. If the input is empty, it returns an empty string to prevent an error. Otherwise, it returns a lowercase version of the input. This step ensures that the user input is not case-sensitive. For example, without this function, the user would have to type <i>Johnny Depp</i> ecactly as it's written within the dataset. With the <code>low</code> function, inputs such as <em>johnny depp</em> or <em>Johnny depp</em> will still work.
-            </p>
-            
-            <!-- getMovies Function -->
-            <h3>2. The <b>getMovies</b> Function</h3>
-            <p>
-                The <code>getMovies</code> function takes <code>nameInput</code> (the actor's name as entered by the user) as a parameter. The variable <code>target</code> is set to the lowercase version of <code>nameInput</code> by calling the <code>low</code> code funtion. An empty list called <code>results</code> is created to store the found movie titles. The variable <code>i</code> is initated to 0.
-            </p>
-            <p>
-                Then a <code>while</code> loop begins. It continues as long as <code>i</code> is smaller than the total number of movies. <code>CurrentMovie</code> is set to <code>MOVIES[i]</code> , meaning the function goes through each movie object one by one. If <code>currentmovie.cast</code> exists (that is, the movie actually has a cast list),a new counter <code>j</code> is set to 0. 
-            </p>
-            <p>
-                Another <code>while</code> loop starts, going through every person in the movie's cast. For each person, if <code>person.name</code> equals the user's <code>target</code>, the title of that movie is added to <code>results</code>. After the match has been found, the inner loop breaks to avoid unnecessary extra checks. <code>j</code> and <code>i</code> continue to increase until all movies have been checked. Finally, the list <code>results</code> is returned, containing all movie titles that the actor appears in. 
-            </p>
-
-            <!-- GetActors Function -->
-            <h3>3. The <b>getActors</b> Function</h3>
-            <p>
-                The <code>getActors</code> function takes <code>movieInput</code> (the movie title entered by the user) as a parameter. The variable <code>target</code> is set to the lowercase version of <code>movieInput</code>. <code>i</code> is initated to <code>0</code>.
-            </p>
-            <p>
-                Then a <code>while</code> loop begins. It continues as long as <code>i</code> is smaller than the total number of movies. <code>CurrentMovie</code> is set to <code>MOVIES[i]</code>. If <code>currentMovie.title</code> equals <code>target</code>, an empty list <code>names</code> is created. A counter <code>j</code> starts at <code>0</code>. 
-            </p>
-            <p>
-                A new <code>while</code> loop begins, running through all cast members in the current movie. For each person, <code>person.name</code> is addeed to the list <code>names</code>. When the loop is finished, <code>names</code> is returned containing all actors in that movie. If no match is found, an empty list is returned instead. 
-            </p>
-
-            <!-- Explanation of the JavaScript code -->
-            <h2>Explanation of the <b>JavaScript</b> code</h2>
-            
-            <!-- Strict mode -->
-            <h3>1. Enabling <b>strict</b> mode</h3>
-            <p>The code begins with <code>"use strict";</code> which activates strict mode. This makes JavaScript more reliable by preventing common mistakes, such as using undeclared variables or performing unsafe actions. It helps developers write cleaner and more predictable code.</p>
-
-            <!-- The System Module -->
-            <h3>2. Importing the <b>File System Module</b></h3>
-            <p>Next, the variable <code>fs</code> is declared and assigned the value <code>require("fs")</code>. This command imports Node.js’s built-in <b>file system module</b>, which allows the program to read, write, and handle files on the computer.</p>
-            
-            <!-- Reading and parsing the JSON file -->
-            <h3>3. <b>Reading</b> and <b>parsing</b> the JSON file</h3>
-            <p>The variable <code>text</code> is set to: <code>fs.readFileSync("movies_100_clean.json", "utf8");</code>. The line reads the contents of the file <code>movies_100_clean.json</code> synchronously, meaning the code waits until the reading process is complete before continuing. The <code>"utf8"</code> parameter specifies that the file should be read as text rather than binary data. After that, a new variable called <code>MOVIES</code> is created and set to: <code>JSON.parse(text);</code>. This command converts the JSON text that was read from the file into a JavaScript object, allowing the program to easily access and manipulate the movie data (for example, titles, cast lists, and IDs).</p>
-            
-            <!-- The Low Function -->
-            <h3>4. The <b>Low</b> Function</h3>
-            <p>The first function, <code>low</code>, takes the user input as a parameter. Inside the function, there's an <code>if</code> statement, which checks whether the input is empty or undefined. If it's empty, the function returns an empty string <code>""</code> to avoid errors. If it's not empty, the input is first converted into a string using <code>input.toString()</code> and then converted into lowercase letters using <code>.toLowerCase()</code>. The purpose of this function is to make the code case-insensitive, so the user doesn’t need to type titles or names with exact capitalization. For example, both <i>johnny depp</i> and <i>johnny Depp</i> will produce the same result.</p>
-            
-            <!-- getMovies Funcion -->
-            <h3>5. The <b>getMovies</b> Function</h3>
-            <p>The function <code>getMovies(nameInput)</code> takes the actor's name entered by the user as a parameter. Inside the function, the variable <code>target</code> is set to lowercase version of the input using the <code>low</code> function. Then an empty array <code>results</code> is created to store the matching movie titles. A variable <code>i</code> is set to <code>0</code> and a <code>while</code> loop begins, running as long as <code>i</code> is smaller than the length of the <code>MOVIES</code> array (i.e. it loops through every movie object).</p>
-            <p>Within the loop, <code>currentMovie</code> is set to <code>MOVIES[i]</code>, representing the current movie being checked. <code>castList</code> is set to <code>currentMovie.cast</code>, which contains a list of actors for that movie. An <code>if</code>statement checks whether the <code>castList</code> actually exists and is an array. If it is, another loop begins.</p>
-            <p>A variable <code>j</code> is set to <code>0</code>. A new <code>while</code> loop runs through each person in the cast list. Inside this loop, <code>person</code> is set to <code>castList[j]</code>, representing the actor currently being checked. If the lowercase version of the actor's name, <code>low(person.name)</code>, matches the user's input, <code>target</code>, the movie title, <code>currentMovie.title</code>, is added to the results array using <code>results.push(currentMovie.title)</code>.The <code>break</code> statement then ends the inner loop and moves on to the next movie. <code>j</code> increases for each iteration. After all movies have been checked, the <code>results</code> array, containing all matching titles, is returned.</p>
-
-            <!-- getActors Function -->
-            <h3>6. The <b>getActors</b> Function</h3>
-            <p>The function <code>getActors(movieInput)</code> takes the movie title entered by the user as a parameter. Inside the function, the variable <code>target</code> is set to lowercase version of the movie title using the <code>low</code> function. A variable <code>i</code> is set to <code>0</code>, and a <code>while</code> loop begins that continues as long as <code>i</code> is smaller than the length of the <code>MOVIES</code> array.</p>
-            <p>Inside the loop, <code>currentMovie</code> is set to <code>MOVIES[i]</code>, representing the movie currently being checked. <code>movieTitle</code> is set to <code>currentMovie.title</code>. An <code>if</code> statement checks whether <code>low(movieTitle)</code> equals <code>target</code> and if it does, it means that the correct movie has been found.</p>
-            <p>In case the correct movie is found, a new array <code>names</code> is created to store all actor names from that movie. If the movie's cast list exists and is an array, a variable <code>j</code> is set to <code>0</code>. Another <code>while</code> loop goes through each person in the cast list.</p>
-            <p>Inside the loop, <code>person</code> is set to <code>castList[j]</code>, and the actor's name is added to the array with <code>names.push(person.name)</code>. <code>j</code> is increased by 1 each time, until the loop finishes. After the inner loop ends, the <code>names</code> array is returned, giving back a list of all actors in the movie that matched the user's input. If no movie matches, an empty list is returned instead.</p>
+            <!-- Text -->
+            <p><b>We all know the feeling, right?</b> You want to watch something, but have no idea what. So you scroll, and scroll, and scroll... And end up watching the same show over and over again.</p>
+            <p>That's why we have created <b>Movie Mood</b> — your personal movie watching buddy! Just pick an actor, a genre or a mood and we'll serve up films that fit your vibe. From action-packed adventures to quiet rainy-day comfort flicks, Movie Mood helps you find exactly what your evening calls for.</p>
+            <p><b>Stop guessing. Start watching.</b></p>
         </main>
 
         <!-- Footer -->
-            <footer>
-                <p>&copy; 2025 Movie Mood. All rights reserved.</p>
-                <p>Follow us for more updates! 🎬</p>
-            </footer>
-     </body>
+        <footer>
+            <p>&copy; 2025 Movie Mood. All rights reserved.</p>
+            <p>Follow us for more updates! 🎬</p>
+        </footer>
+    </body>
 </html>
