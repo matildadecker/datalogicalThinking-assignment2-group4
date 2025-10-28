@@ -1,117 +1,162 @@
-/* Rensa webbläsarens standardstilar */
-* { /* Påverka alla element på sidan */ 
-    margin: 0; /* Ta kontroll över alla marginaler */
-    padding: 0; /* Ta kontroll över alla inre mellanrum */
-    box-sizing: border-box; /* Både padding och border ska räknas in i totalbredden på varje element */
+/* Reset browser default styles */
+* { /* Affect all elements on the page */ 
+    margin: 0; /* Remove all default margins */
+    padding: 0; /* Remove all default margins */
+    box-sizing: border-box; /* Include padding and border in the total element width/height */
 }
 
-/* Grundinställningar */
-html, body { /* För att allt ska bete sig konsekvent */
-    height: 100%; /* Innehåll ska täcka hela webbläsarens höjd */ 
-    margin: 0; /* Extra reset för äldre webbläsare som har target html eller body för marginaler */ 
-    padding: 0; /* Extra reset för äldre webbläsare som har target html eller body för marginaler */ 
-    background-color: #ffffff; /* Bakgrundsfärg: Vit */
-    color: #000; /* Textfärg: Svart */
-    line-height: 1.8; /* Radavstånd */
-    font-family: 'Lora', serif; /* Grundtypsnitt */
+/* Base settings */
+html, body { /* Keep layout consistens across browsers */
+    height: 100%; /* Ensure the content convers the full viewport height */ 
+    margin: 0; /* Extra reset for older browsers targeting htmk/body margins */ 
+    padding: 0; /* Extra reset for older browsers targeting htmk/body margins */ 
+    background-color: #ffffff; /* Background color: white */
+    color: #000; /* Text color: black */
+    line-height: 1.8; /* Line spacing */
+    font-family: 'Lora', serif; /* Base font */
 }
 
-/* Innehållscontainer */
+/* Main content container */
 main {
-    max-width: 800px; /* Begränsar bredden för bättre läsbarhet */
-    margin: 0 auto; /* Horisontell centrering */
-    padding: 2rem 1.5 rem; /* Avstånd runt texten */
-    padding-top: 6rem; /* Avstånd ovanför texten */
+    max-width: 800px; /* Limit width for better readability */
+    margin: 0 auto; /* Center horizontally */
+    padding: 2rem 1.5 rem; /* Inner spacing around text */
+    padding-top: 6rem; /* Extra space above content */
 }
 
-/* Rubriker */
+/* Headings */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', sans-serif; /* Grundtypsnitt för rubriker */
-    font-weight: 500; /* Textens tjocklek */
-    text-transform: uppercase; /* Versaler */
-    margin-top: 2rem; /*Avståndet ovanför rubriken */
-    margin-bottom: 1rem; /*Avståndet under rubriken */
+    font-family: 'Montserrat', sans-serif; /* Font for headings */
+    font-weight: 500; /* Font weight */
+    text-transform: uppercase; /* Uppercase text */
+    margin-top: 2rem; /* Space above heading */
+    margin-bottom: 1rem; /* Space below heading */
 }
 
-h1 {
-    font-size: 2.5rem; /* Textstorlek h1 */
-    font-weight: 500; /* Textens tjocklek */
-    letter-spacing: 1px; /* Avstånd mellan bokstäver */
+h1 { 
+    font-size: 2.5rem; /* Heading size */
+    font-weight: 500; /* Font weight */
+    letter-spacing: 1px; /* Space between letters */
 }
 
-/* Paragrafer */
+/* Paragraphs */
 p {
-    margin-bottom: 1.8rem; /*Avstånd under paragrafer */
+    margin-bottom: 1.8rem; /* Space below each paragraph*/
 }
 
-/* Navigationsmeny */
+/* Links inside paragraphs */
+p a { 
+    color: #7FC8A9; /* Color: green */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Hover effect for links inside paragraphs */
+p a:hover {
+    color: #000000; /* Black on hover */
+}
+
+/* Text styling for code snippets and commands */
+.code-section {
+    font-family: 'Courier New', monospace; /* Classic code look */
+    font-size: 0.95rem; /* Slightly smaller text */
+    background-color: #f4f4f4; /* Light gray background */
+    display: inline-block; /* Makes background wrap text width */
+    padding: 0.3rem 0.6rem; /* Spacing around text */
+    border-radius: 4px; /* Soft corners */
+    line-height: 1.1; /* Tight spacing between lines */
+    white-space: pre; /* Keeps line breaks and spacing exactly as in HTML */
+}
+
+code { /* For in-text code snippets, commands, etc */
+    background-color: #f4f4f4; /* Light gray background */
+    color: #c7254e; /* Text color: pink */
+    font-family: monospace; /* Classic code look */
+    padding: 2px 5px; /* Spacing around text */
+    border-radius: 4px; /* Soft corners */
+}
+
+/* Images */
+.image-container {
+  text-align: center; /* Center image horizontally */
+  margin: 20px 0; /* Add some space above and below */
+}
+
+.image-container img {
+  max-width: 100%; /* Fit image within content area */
+  height: auto; /* Keep the proportions correct */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Soft shadow */
+}
+
+/* Navigation bar */
 nav {
-    position: fixed; /* Fixerar menyn högst upp på sidan */
-    top: 0; /* Placerar menyn högst upp */
-    left: 0; /* Menyn löper från vänster till höger */
-    width: 100%; /* Menyn ska täcka hela sidans bredd */
-    background: #eef7ee; /* Diskret ljusblå bakgrundsfärg */
-    color: #000; /* Textfärg: Svart */
-    display: flex; /* Placerar innehållet i menyn på rad */
-    justify-content: space-between; /* Fördelar elementen jämnt över raden */
-    align-items: center; /* Vertikal centrering */
-    padding: 1rem 3rem; /* Inre marginal */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Skugga under menyn* */
-    z-index: 1000; /* Placerar menyn överst, över alla andra element */
+    position: fixed; /* Keep nav fixed at the top */
+    top: 0; /* Stick to the top edge */
+    left: 0; /* Span full width from left to right */
+    width: 100%; /* Full page width */
+    background: #eef7ee; /* Soft light blue background */
+    color: #000; /* Text color: black */
+    display: flex; /* Place items in a row */
+    justify-content: space-between; /* Distribute elements evenly */
+    align-items: center; /* Vertically center items */
+    padding: 1rem 3rem; /* Inner padding */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Drop shadow below nav * */
+    z-index: 1000; /* Keep nav above all other elements */
 }
 
-/* Logotyp */
+/* Logo */
 .logo {
-    font-weight: 700; /* Festil i rubriken */
-    font-size: 1.3rem; /* Textstorlek */
-    letter-spacing: 1px; /* Avstånd mellan bokstäver */
-    text-transform: uppercase; /* Versaler */
-    font-family: 'Lato', sans-serif; /* Logotypen ska ha typsnitt Lato */ 
+    font-weight: 700; /* Bold text */
+    font-size: 1.3rem; /* Font size */
+    letter-spacing: 1px; /* Space between letters */
+    text-transform: uppercase; /* Uppercase text */
+    font-family: 'Lato', sans-serif; /* Font for logo */ 
 }
 
-/* Menylänkar */
+/* Navigation links */
 .menu a {
-    text-decoration: none; /* Tar bort understrykning av text */
-    color: #000; /* Textfärg: Svart */
-    text-transform: uppercase; /* Versaler */
-    margin: 0 0.8rem; /* Horisontellt avstånd mellan länkar */
-    font-size: 0.85rem; /* Textstorlek */
-    transition: all 0.3s ease; /* Mjuk hovereffekt */
-    font-family: 'Lato', sans-serif; /* Länkarna ska ha typsnitt Lato */ 
-    font-weight: 400; /* Normal tjocklek på texten */
+    text-decoration: none; /* Remove underline */
+    color: #000; /* Text color: black */
+    text-transform: uppercase; /* Uppercase text */
+    margin: 0 0.8rem; /* Horizontal spacing between links */
+    font-size: 0.85rem; /* Font size */
+    transition: all 0.3s ease; /* Smooth hover effect */
+    font-family: 'Lato', sans-serif; /* Font for menu links */ 
+    font-weight: 400; /* Normal font weight */
 }
 
-/* Hovereffekt för menylänkar */
+/* Hover effect for navigation links */
 .menu a:hover {
-    color: white; /* Hoverfärg: Vit */
-    transform: translateY(-2px); /* Hovereffekt */
+    color: white; /* White text on hover */
+    transform: translateY(-2px); /* Slight upward movement */
 }
 
-/* Sociala ikoner */
+/* Social icons */
 .socials a {
-    color: #000; /* Färg: Svart */
-    margin-left: 1rem; /* Avstånd mellan ikoner */
-    font-size: 1.1rem; /*Storlek på ikoner */
-    transition: all 0.3s ease; /* Mjuk hovereffekt */
+    color: #000; /* Icon color: black */
+    margin-left: 1rem; /* Space between icons */
+    font-size: 1.1rem; /* Icon size */
+    transition: all 0.3s ease; /* Smooth hover transition */
 }
 
-/* Hovereffekt för ikoner */
+/* Hover effect for icons */
 .socials a:hover {
-    color: white; /* Hoverfärg: Vit */
-    transform: scale(1.2); /* Hovereffekt */
+    color: white; /* White on hover */
+    transform: scale(1.2); /* Slight zoom effect */
 }
 
 /* Footer */ 
 footer {
-    background-color: #eef7ee; /* Diskret ljusblå bakgrundsfärg */
-    color: #000; /* Textfärg: Svart */
-    text-align: center; /* Allt innehåll ska centreras horisontellt */
-    padding: 1.5rem 0; /* Inre marginaler */
-    font-family: 'Lato', sans-serif; /* Typsnitt */ 
-    box-shadow: 0 -4px 12px rgba(0,0,0,0.1); /*Skugga ovanför footer */
+    background-color: #eef7ee; /* Soft light-blue background */
+    color: #000; /* Text color: black */
+    text-align: center; /* Center all footer content */
+    padding: 1.5rem 0; /* Inner padding */
+    font-family: 'Lato', sans-serif; /* Font */ 
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.1); /* Shadow above footer */
 }
 
+/* Adjustments for paragraphs inside footer */
 footer p {
-    margin-bottom: 0.5rem; /* Frångå standardinställningarna för marginaler */
-    line-height: 1.4; /* Frångå standardinställningarna för avstånd mellan paragrafer */ 
+    margin-bottom: 0.5rem; /* Custom spacing for paragraphs */
+    line-height: 1.4; /* Adjust line spacing */ 
 }
