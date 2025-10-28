@@ -5,7 +5,7 @@
     <head>
         <meta charset="UTF-8">
         <title>MovieMood - The dataset</title>
-        <!-- Kopplar ihop CSS-filen -->
+        <!-- Connecting CSS file -->
         <link rel="stylesheet" href="style.css">
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -37,11 +37,16 @@
        
         <!-- Main Content Area -->
         <main>
+
+            <!-- The dataset -->
             <h1>The dataset</h1>
-            <p>Here can we give a short description of how our dataset is structured</p> 
-
-
+            <p>We started by downloading the <b><a href="https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata" class="pastel-link">TMDB 5000 Movie Dataset</a></b> from <a href="https://www.kaggle.com/"><b>Kaggle</b></a>, which contains information about approximately 5000 movies. The dataset was downloaded as a <b>CSV file.</b> Since we didn’t need all 5000 movies, we decided to reduce the dataset to only 100 movies using the bash terminal. We used the following command:</p>
+            <p class="code-section">head -n 101 tmdb_5000_credits.csv > tmdb_100.csv</p>
+            <p>This command copies the first 101 lines of the original file, one header line and 100 data rows, and saves them in a new file called tmdb_100.csv. Next, we wanted to remove the crew column since it wasn’t relevant for our project. To do that, we used the command:</p>
+            <p class="code-section">csvcut -c movie_id,title,cast movies_100.csv > movies_100_clean.csv</p>
+            <p>After cleaning the data, we wanted to have it available in different formats. We uploaded the CSV-file to <b><a href="https://workspace.google.com/products/sheets/">Google Sheets</a></b>, then installed the <b><a href="https://workspace.google.com/marketplace/app/export_sheet_data/903838927001">Export Sheet Data</a></b> add-on. With this tool, we exported the same dataset as both <b>XML</b> and <b>JSON</b> files. This made it easier to use the data in different parts of our web project and to test how various data formats could be implemented.</p>
         </main>
+        
         <!-- Footer -->
         <footer>
             <p>&copy; 2025 Movie Mood. All rights reserved.</p>
