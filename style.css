@@ -49,6 +49,16 @@ p a:hover {
     color: #000000;
 }
 
+ul li a {
+    color: #7FC8A9;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+ul li a:hover {
+    color: #000000; /* Black on hover */
+}
+
 .code-section {
     font-family: 'Courier New', monospace;
     font-size: 0.95rem;
@@ -128,6 +138,13 @@ nav {
 .socials a:hover {
     color: white; 
     transform: scale(1.2); 
+}
+
+ul {
+    list-style-position: outside;
+    margin-left: 0;
+    padding-left: 1em;
+    margin-bottom: 1.8rem;
 }
 
 footer {
